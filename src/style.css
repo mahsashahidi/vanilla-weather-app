@@ -30,11 +30,12 @@
   max-width: 720px;
   width: 90vh;
   height: 90vh;
-  color: rgb(255, 255, 255);
+  color: black;
   font-family: "PT Serif", serif;
   font-size: 16px;
 }
 .mainApp {
+  color: white;
   margin-top: 25px;
   border-style: solid;
   border-radius: 10px;
@@ -79,19 +80,7 @@
   padding-bottom: 6px;
 }
 
-a:link {
-  color: white;
-  text-decoration: none;
-}
-a:visited {
-  color: white;
-  text-decoration: none;
-}
-a:hover {
-  color: white;
-  text-decoration: none;
-}
-a:active {
+.metrics {
   color: white;
   text-decoration: none;
 }
