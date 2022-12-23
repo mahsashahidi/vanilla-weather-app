@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="src/style.css" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body class="mainBody">
+    <div class="container">
+      <div class="mainApp">
+        <!-- search secion -->
+        <div class="searchbar">
+          <div class="row align-items-center">
+            <div class="col-3">
+              <form id="city-searching">
+                <div class="p-0 rounded-4 shadow-sm mb-3 citysearch">
+                  <div class="input-group">
+                    <input
+                      type="search"
+                      placeholder="City"
+                      class="form-control border-0 bg-transparent text-white"
+                      id="searched-city"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        id="button-addon1"
+                        type="submit"
+                        class="btn btn-link text-primary"
+                      >
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-1">
+              <button id="here" class="here"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- today's weather section-->
+        <div class="glass">
+          <div class="row justify-content-center">
+            <div class="col">
+              <img
+                src="src/icons/6327901.png"
+                width="64px"
+                class="todaysIcon"
+              />
+              <span class="tempNumber" id="temp-number">18°</span>
+              <small
+                ><a href="#" id="celsius">C</a> |
+                <a href="#" id="fahrenheit">F</a></small
+              >
+              <br />
+              Humidity: <span id="humidity">98</span>%
+              <br />
+              Wind: <span id="wind">3</span> km/h
+            </div>
+
+            <div class="col">
+              <div class="midInfo">
+                <h1 id="city-name">Tehran</h1>
+                <span id="exact-time">Monday 04:44 AM 21 Nov</span>
+                <br />
+                <span id="description">Clear</span>
+              </div>
+              <br />
+            </div>
+
+            <div class="col">
+              <div id="ex1" class="ex1"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- weekly forecast section -->
+        <div class="row justify-content-center g-0">
+          <div class="col-2">
+            <div
+              class="border border-bottom-0 border-top-0 border-start-0 border-secondary p-3 mb-2 rounded-0 border-1 frame-next text-center"
+            >
+              <strong>Mon</strong>
+              <br />
+              21 Nov
+              <br />
+
+              <img src="src/icons/6327901.png" width="54px" />
+              <br />
+              <small> 18° / 10° </small>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div
+              class="border border-bottom-0 border-top-0 border-secondary p-3 mb-2 rounded-0 border-1 frame-next text-center"
+            >
+              <strong>Tue</strong>
+              <br />
+              22 Nov
+              <br />
+              <img src="src/icons/6327969.png" width="54px" />
+              <br />
+              <small> 20° / 11° </small>
+            </div>
+          </div>
+          <div class="col-2">
+            <div
+              class="border border-bottom-0 border-top-0 border-secondary p-3 mb-2 rounded-0 border-1 frame-next text-center"
+            >
+              <strong>Wed</strong>
+              <br />
+              23 Nov
+              <br />
+              <img src="src/icons/6327882.png" width="54px" />
+
+              <br />
+              <small> 14° / 9° </small>
+            </div>
+          </div>
+          <div class="col-2">
+            <div
+              class="border border-bottom-0 border-top-0 border-secondary p-3 mb-2 rounded-0 border-1 frame-next text-center"
+            >
+              <strong>Thu</strong>
+              <br />
+              24 Nov
+              <br />
+              <img src="src/icons/6328126.png" width="54px" />
+              <br />
+              <small> 19° / 10° </small>
+            </div>
+          </div>
+          <div class="col-2">
+            <div
+              class="border border-bottom-0 border-top-0 border-end-0 border-secondary p-3 mb-2 rounded-0 border-1 frame-next text-center"
+            >
+              <strong>Fri</strong>
+              <br />
+              25 Nov
+              <br />
+              <img src="src/icons/6328544.png" width="54px" />
+              <br />
+              <small> 17° / 10° </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- footnote -->
+        <div class="footNote">
+          <div class="row">
+            <div class="col">Coded by Mahsa Shahidi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

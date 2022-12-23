@@ -1,0 +1,114 @@
+.searchbar {
+  background-color: rgba(8, 8, 8, 0.8);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.citysearch {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgb(198, 198, 198);
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.bi-search {
+  color: rgb(198, 198, 198);
+  font-size: large;
+}
+.here {
+  width: 37px;
+  height: 37px;
+  background-image: url("location.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+.mainBody {
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+  min-width: 50em;
+  max-width: 720px;
+  width: 90vh;
+  height: 90vh;
+  color: rgb(255, 255, 255);
+  font-family: "PT Serif", serif;
+  font-size: 16px;
+}
+.mainApp {
+  margin-top: 25px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  padding-top: 0px;
+  border-color: #212529;
+  background-image: url("cloudy-day.jpg");
+  background-size: cover;
+}
+
+.glass {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 85%;
+  height: 90%;
+  box-shadow: 1px 1px 10px #212529;
+  transform: translate(60px, 0px);
+  text-align: center;
+  background-color: rgb(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+}
+.midInfo {
+  margin-top: 30px;
+}
+.frame-next {
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 0.5px 6px rgb(27, 27, 27);
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  backdrop-filter: blur(2px);
+}
+.frame-next:hover {
+  backdrop-filter: blur(5px);
+}
+.ex1 {
+  text-align: center;
+  font-weight: lighter;
+  filter: drop-shadow(0 0 25px rgb(0, 50, 50));
+  padding-top: 25px;
+  padding-right: 0px;
+  padding-bottom: 6px;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+a:active {
+  color: white;
+  text-decoration: none;
+}
+.footNote {
+  background-color: rgb(0, 0, 0, 0.3);
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+.tempNumber {
+  font-size: 68px;
+}
+
+.todaysIcon {
+  position: relative;
+  left: 10px;
+  top: -15px;
+}
