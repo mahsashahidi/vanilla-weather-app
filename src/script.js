@@ -85,9 +85,9 @@ function weatherReport(response) {
   timeElement.innerHTML = time;
   //city name
   let city = document.querySelector("#city-name");
-  city.innerHTML = response.data.name;
+  city.innerHTML = response.data.city;
   //temperature
-  let temperature = response.data.main.temp;
+  let temperature = response.data.temperature.current;
   let tempElement = document.querySelector("#temp-number");
   tempElement.innerHTML = `${Math.round(temperature)}°`;
   let farenheit = document.querySelector("#fahrenheit");
