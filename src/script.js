@@ -85,9 +85,9 @@ function weatherReport(response) {
   timeElement.innerHTML = time;
   //city name
   let city = document.querySelector("#city-name");
-  city.innerHTML = response.data.name;
+  city.innerHTML = response.data.city;
   //temperature
-  let temperature = response.data.main.temp;
+  let temperature = response.data.temperature.current;
   let tempElement = document.querySelector("#temp-number");
   tempElement.innerHTML = `${Math.round(temperature)}°`;
   let farenheit = document.querySelector("#fahrenheit");
@@ -115,7 +115,13 @@ function weatherReport(response) {
   let description = response.data.condition.description;
   let descriptElement = document.querySelector("#description");
   descriptElement.innerHTML = description;
+
+  let icon = response.data.condition.icon;
+  console.log(icon);
+  let iconElement = document.querySelector("#todaysIcon");
+  iconElement.setAttribute("src", `src/icons/${icon}.png`);
 }
+
 function search(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherReport);
