@@ -117,9 +117,69 @@ function weatherReport(response) {
   descriptElement.innerHTML = description;
 
   let icon = response.data.condition.icon;
-  console.log(icon);
+
   let iconElement = document.querySelector("#todaysIcon");
   iconElement.setAttribute("src", `src/icons/${icon}.png`);
+
+  forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${response.data.city}&key=${apiKey}`;
+  axios(forecastUrl).then(displayForecast);
+}
+
+function formatForecastDate(timestamp) {
+  let now = new Date(timestamp * 1000);
+  let day = now.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastweekDay = days[day];
+  let month = now.getMonth();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let date = now.getDate();
+  let forecastMonth = months[month];
+  return `<strong>${forecastweekDay}</strong> <br/> <small>${date} ${forecastMonth}</small>`;
+}
+
+function displayForecast(response) {
+  let forcastArray = response.data.daily;
+
+  let forcastElement = document.querySelector("#forecast");
+  let forcastHTML = `<div class="row justify-content-center g-0">`;
+
+  forcastArray.forEach(function (forcastDay, index) {
+    if (index < 5) {
+      let forecastDate = formatForecastDate(forcastDay.time);
+      forcastHTML =
+        forcastHTML +
+        `
+        <div class="col-2">
+        <div class="next-days text-center">
+          ${forecastDate}
+          <br />
+          <img src=src/icons/${
+            forcastDay.condition.icon
+          }.png width="54px" alt="forcast" />
+          <br />
+          <small> ${Math.round(forcastDay.temperature.minimum)}° | ${Math.round(
+          forcastDay.temperature.maximum
+        )}° </small>
+        </div>
+      </div>
+      `;
+    }
+  });
+  forcastHTML = forcastHTML + `</div>`;
+  forcastElement.innerHTML = forcastHTML;
 }
 
 function search(city) {
